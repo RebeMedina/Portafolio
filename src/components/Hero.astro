@@ -1,0 +1,52 @@
+---
+const personalImageAlt = "Rebeca Medina";
+import Badge from "../components/Badge.astro";
+import LinkedInIcon from "../components/icons/LinkedIn.astro";
+import MailIcon from "../components/icons/Mail.astro";
+import SocialPill from "../components/SocialPill.astro";
+---
+
+<div class="max-w-xl">
+  <div class="flex gap-4 mb-4">
+    <img
+      class="rounded-full shadow-lg size-16"
+      src="https://scontent.fsjo10-1.fna.fbcdn.net/v/t39.30808-6/354578705_2971692739633858_3403050957381879112_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=5f2048&_nc_ohc=r7LiXshlY8cAX8g33EF&_nc_ht=scontent.fsjo10-1.fna&oh=00_AfB5qhcjmHlJj6Xt4VuBY9ig3O5qUbEBUfpRQsNAB2fw2Q&oe=660E8506"
+      alt={personalImageAlt}
+    />
+    <a
+      href="https://www.linkedin.com/in/rebemedina99/"
+      target="_blank"
+      rel="noopener"
+      class="flex items-center transition md:justify-center md:hover:scale-105"
+    >
+      <Badge>Disponible para trabajar</Badge>
+    </a>
+  </div>
+  <h1
+    class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white"
+  >
+    Hey, soy Rebe
+  </h1>
+  <p
+    class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-violet-200 [&>strong]:text-violet-500 [&>strong]:font-semibold dark:text-gray-300"
+  >
+    Mi pasión es el frontend, diseño UI y desarrollo web. Con
+    conocimientos adquiridos en entornos universitarios y proyectos
+    independientes, estoy comprometida a aportar al éxito de cualquier proyecto.
+    <strong>
+      Mi dedicación a la programación ha impulsado mi crecimiento y aprendizaje
+      continuo.</strong
+    >
+  </p>
+</div>
+
+<nav class="flex flex-wrap gap-4 mt-8">
+  <SocialPill href="mailto:rebemedi99@gmail.com">
+    <MailIcon class="size-4" />
+    Contáctame
+  </SocialPill>
+  <SocialPill href="https://www.linkedin.com/in/rebemedina99/">
+    <LinkedInIcon class="size-4" />
+    LinkedIn
+  </SocialPill>
+</nav>
