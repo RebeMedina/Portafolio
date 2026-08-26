@@ -17,16 +17,18 @@
   --text-muted: #a99cc6;
   --text-faint: #6f6390;
 
-  --font-display: 'Poppins', sans-serif;
-  --font-body: 'Poppins', sans-serif;
-  --font-mono: 'Poppins', sans-serif;
+  --font-display: "Poppins", sans-serif;
+  --font-body: "Poppins", sans-serif;
+  --font-mono: "Poppins", sans-serif;
 
   --radius: 14px;
 
   color-scheme: dark;
 }
 
-/* ---------- Base ---------- */
+/* =========================================================
+   BASE
+========================================================= */
 
 * {
   box-sizing: border-box;
@@ -38,6 +40,7 @@ html {
 
 body {
   margin: 0;
+
   background:
     radial-gradient(
       1200px 600px at 15% -10%,
@@ -53,6 +56,7 @@ body {
 
   color: var(--text);
   font-family: var(--font-body);
+
   -webkit-font-smoothing: antialiased;
 }
 
@@ -72,7 +76,9 @@ a {
   padding: 0 24px;
 }
 
-/* ---------- Sections ---------- */
+/* =========================================================
+   SECTIONS
+========================================================= */
 
 section {
   padding: 64px 0;
@@ -84,13 +90,17 @@ section {
   }
 }
 
-/* ---------- Typography ---------- */
+/* =========================================================
+   TYPOGRAPHY
+========================================================= */
 
 .eyebrow {
   font-family: var(--font-mono);
   font-size: 13px;
   letter-spacing: 0.08em;
+
   color: var(--violet-400);
+
   text-transform: uppercase;
 
   display: flex;
@@ -101,10 +111,13 @@ section {
 }
 
 .eyebrow::before {
-  content: '';
+  content: "";
+
   width: 18px;
   height: 1px;
+
   background: var(--violet-400);
+
   display: inline-block;
 }
 
@@ -119,8 +132,11 @@ h3 {
 
 h2 {
   font-size: clamp(24px, 3.6vw, 34px);
+
   color: var(--text);
+
   margin-bottom: 26px;
+
   letter-spacing: 0.01em;
 }
 
@@ -129,7 +145,9 @@ p {
   line-height: 1.7;
 }
 
-/* ---------- Buttons ---------- */
+/* =========================================================
+   BUTTONS
+========================================================= */
 
 .btn {
   font-family: var(--font-mono);
@@ -151,11 +169,7 @@ p {
 }
 
 .btn--primary {
-  background: linear-gradient(
-    135deg,
-    var(--violet-700),
-    var(--violet-500)
-  );
+  background: linear-gradient(135deg, var(--violet-700), var(--violet-500));
 
   border-color: transparent;
   color: #fff;
@@ -178,7 +192,9 @@ p {
   flex-shrink: 0;
 }
 
-/* ---------- Accessibility ---------- */
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
 
 a:focus-visible,
 button:focus-visible,
@@ -217,7 +233,9 @@ button:focus-visible,
 
 .nav--scrolled {
   background: rgba(11, 7, 19, 0.82);
+
   backdrop-filter: blur(10px);
+
   border-bottom: 1px solid var(--border);
 }
 
@@ -240,6 +258,7 @@ button:focus-visible,
   height: 42px;
 
   display: block;
+
   object-fit: contain;
 }
 
@@ -270,10 +289,13 @@ button:focus-visible,
 .lang-switch {
   font-family: var(--font-mono);
   font-size: 12.5px;
+
   letter-spacing: 0.03em;
 
   background: var(--surface);
+
   border: 1px solid var(--border);
+
   border-radius: 999px;
 
   padding: 7px 12px;
@@ -282,6 +304,7 @@ button:focus-visible,
 
   display: inline-flex;
   align-items: center;
+
   gap: 5px;
 
   cursor: pointer;
@@ -314,6 +337,7 @@ button:focus-visible,
   border: none;
 
   cursor: pointer;
+
   padding: 8px;
 }
 
@@ -322,6 +346,7 @@ button:focus-visible,
   height: 2px;
 
   background: var(--text);
+
   display: block;
 }
 
@@ -340,9 +365,11 @@ button:focus-visible,
 
   .nav__mobile {
     display: flex;
+
     flex-direction: column;
 
     padding: 8px 24px 20px;
+
     gap: 4px;
 
     background: rgba(11, 7, 19, 0.96);
@@ -354,6 +381,7 @@ button:focus-visible,
     padding: 10px 0;
 
     color: var(--text-muted);
+
     font-size: 15px;
   }
 }
@@ -369,6 +397,7 @@ button:focus-visible,
 
 .hero__grid {
   display: grid;
+
   grid-template-columns: 1.1fr 1fr;
 
   gap: 56px;
@@ -380,17 +409,14 @@ button:focus-visible,
   font-size: clamp(28px, 4.2vw, 44px);
 
   letter-spacing: 0.01em;
+
   line-height: 1.4;
 
   color: var(--text);
 }
 
 .hero__title-accent {
-  background: linear-gradient(
-    90deg,
-    var(--violet-400),
-    var(--lilac)
-  );
+  background: linear-gradient(90deg, var(--violet-400), var(--lilac));
 
   -webkit-background-clip: text;
   background-clip: text;
@@ -400,6 +426,7 @@ button:focus-visible,
 
 .hero__summary {
   margin-top: 20px;
+
   max-width: 46ch;
 
   font-size: 16px;
@@ -407,6 +434,7 @@ button:focus-visible,
 
 .hero__cta {
   display: flex;
+
   gap: 14px;
 
   margin-top: 30px;
@@ -420,6 +448,7 @@ button:focus-visible,
   background: var(--bg-elevated);
 
   border: 1px solid var(--border);
+
   border-radius: var(--radius);
 
   box-shadow:
@@ -431,7 +460,9 @@ button:focus-visible,
 
 .terminal__bar {
   display: flex;
+
   align-items: center;
+
   gap: 8px;
 
   padding: 12px 16px;
@@ -466,6 +497,7 @@ button:focus-visible,
   margin-left: 10px;
 
   font-family: var(--font-mono);
+
   font-size: 12px;
 
   color: var(--text-faint);
@@ -477,6 +509,7 @@ button:focus-visible,
   min-height: 210px;
 
   font-family: var(--font-mono);
+
   font-size: 13.5px;
 }
 
@@ -486,12 +519,15 @@ button:focus-visible,
 
 .terminal__cmd {
   color: var(--violet-400);
+
   margin: 0 0 4px;
 }
 
 .terminal__out {
   color: var(--text-muted);
+
   margin: 0;
+
   padding-left: 14px;
 }
 
@@ -529,23 +565,32 @@ button:focus-visible,
 .cards {
   display: grid;
 
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 
   gap: 24px;
+
+  align-items: stretch;
 }
 
 .card {
   display: flex;
+
   flex-direction: column;
+
+  min-width: 0;
+
+  height: 100%;
 
   background: var(--surface);
 
   border: 1px solid var(--border);
+
   border-radius: var(--radius);
 
   padding: 28px;
 
   position: relative;
+
   overflow: hidden;
 
   transition:
@@ -555,20 +600,17 @@ button:focus-visible,
 }
 
 .card::before {
-  content: '';
+  content: "";
 
   position: absolute;
+
   inset: -1px;
 
   padding: 1px;
 
   border-radius: var(--radius);
 
-  background: linear-gradient(
-    135deg,
-    var(--violet-500),
-    transparent 40%
-  );
+  background: linear-gradient(135deg, var(--violet-500), transparent 40%);
 
   opacity: 0;
 
@@ -579,6 +621,7 @@ button:focus-visible,
     linear-gradient(#000 0 0);
 
   -webkit-mask-composite: xor;
+
   mask-composite: exclude;
 
   pointer-events: none;
@@ -589,13 +632,16 @@ button:focus-visible,
 
   border-color: var(--border-bright);
 
-  box-shadow:
-    0 20px 45px -25px rgba(124, 58, 237, 0.55);
+  box-shadow: 0 20px 45px -25px rgba(124, 58, 237, 0.55);
 }
 
 .card:hover::before {
   opacity: 1;
 }
+
+/* =========================================================
+   PROJECT PREVIEW
+========================================================= */
 
 .card__preview {
   display: block;
@@ -605,7 +651,13 @@ button:focus-visible,
   margin: -28px -28px 20px;
 
   border-bottom: 1px solid var(--border);
+
+  overflow: hidden;
 }
+
+/* ---------------------------------------------------------
+   Mantiene exactamente la misma proporción para todos
+--------------------------------------------------------- */
 
 .card__preview-frame {
   width: 100%;
@@ -619,7 +671,16 @@ button:focus-visible,
   position: relative;
 }
 
+/* =========================================================
+   IFRAME
+========================================================= */
+
 .card__preview-frame iframe {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
   width: 1280px;
   height: 800px;
 
@@ -628,6 +689,7 @@ button:focus-visible,
   pointer-events: none;
 
   transform-origin: top left;
+
   transform: scale(0.27);
 }
 
@@ -637,6 +699,65 @@ button:focus-visible,
   }
 }
 
+/* =========================================================
+   PLACEHOLDER
+========================================================= */
+
+.card__preview--placeholder {
+  cursor: default;
+}
+
+.card__preview-placeholder {
+  width: 100%;
+  height: 100%;
+
+  min-height: 0;
+
+  aspect-ratio: 16 / 10;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 40px;
+
+  text-align: center;
+}
+
+.card__preview-placeholder-name {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+
+  line-height: 1.1;
+
+  font-weight: 700;
+
+  letter-spacing: -0.04em;
+}
+
+/* =========================================================
+   FITNESS AI / EMERALD PREVIEW
+========================================================= */
+
+.card__preview--emerald {
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(52, 211, 153, 0.25),
+      transparent 45%
+    ),
+    linear-gradient(135deg, #071c17, #0b2a22 55%, #102f28);
+}
+
+.card__preview--emerald .card__preview-placeholder-name {
+  color: #6ee7b7;
+}
+
+/* =========================================================
+   PREVIEW HINT
+========================================================= */
+
 .card__preview-hint {
   position: absolute;
 
@@ -644,6 +765,7 @@ button:focus-visible,
   bottom: 10px;
 
   font-family: var(--font-mono);
+
   font-size: 11px;
 
   padding: 5px 10px;
@@ -671,14 +793,25 @@ button:focus-visible,
   transform: translateY(0);
 }
 
+/* =========================================================
+   PROJECT TOP
+========================================================= */
+
 .card__top {
   display: flex;
 
   justify-content: space-between;
+
   align-items: center;
+
+  gap: 12px;
 
   margin-bottom: 16px;
 }
+
+/* =========================================================
+   BADGE
+========================================================= */
 
 .badge {
   font-family: var(--font-mono);
@@ -690,9 +823,12 @@ button:focus-visible,
   color: var(--text-muted);
 
   display: inline-flex;
+
   align-items: center;
 
   gap: 7px;
+
+  min-width: 0;
 }
 
 .badge--live {
@@ -702,6 +838,8 @@ button:focus-visible,
 .badge__dot {
   width: 7px;
   height: 7px;
+
+  flex-shrink: 0;
 
   border-radius: 50%;
 
@@ -723,13 +861,23 @@ button:focus-visible,
   }
 }
 
+/* =========================================================
+   PERIOD
+========================================================= */
+
 .card__period {
   font-family: var(--font-mono);
 
   font-size: 11.5px;
 
   color: var(--text-faint);
+
+  white-space: nowrap;
 }
+
+/* =========================================================
+   PROJECT NAME
+========================================================= */
 
 .card__name {
   font-size: 22px;
@@ -739,11 +887,19 @@ button:focus-visible,
   margin-bottom: 10px;
 }
 
+/* =========================================================
+   PROJECT DESCRIPTION
+========================================================= */
+
 .card__desc {
   font-size: 14.5px;
 
   flex-grow: 1;
 }
+
+/* =========================================================
+   PROJECT STACK
+========================================================= */
 
 .card__stack {
   display: flex;
@@ -771,17 +927,79 @@ button:focus-visible,
   color: var(--lilac);
 }
 
+/* =========================================================
+   PROJECT LINK
+========================================================= */
+
 .card__link {
   font-family: var(--font-mono);
 
   font-size: 13px;
 
   color: var(--violet-400);
+
+  transition:
+    color 0.15s ease,
+    transform 0.15s ease;
 }
+
+.card__link:hover {
+  color: var(--lilac);
+}
+
+.card__link--disabled {
+  opacity: 0.55;
+
+  cursor: default;
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   PROJECTS RESPONSIVE
+========================================================= */
 
 @media (max-width: 780px) {
   .cards {
     grid-template-columns: 1fr;
+  }
+
+  .card {
+    height: auto;
+  }
+
+  .card__preview-frame {
+    aspect-ratio: 16 / 10;
+  }
+
+  .card__preview-placeholder {
+    aspect-ratio: 16 / 10;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 22px;
+  }
+
+  .card__preview {
+    margin: -22px -22px 18px;
+  }
+
+  .card__top {
+    align-items: flex-start;
+  }
+
+  .card__period {
+    font-size: 10.5px;
+  }
+
+  .card__preview-placeholder {
+    padding: 24px;
+  }
+
+  .card__preview-placeholder-name {
+    font-size: 2rem;
   }
 }
 
@@ -913,8 +1131,7 @@ button:focus-visible,
 
   text-align: left;
 
-  transition:
-    transform 0.55s cubic-bezier(0.4, 0.2, 0.2, 1);
+  transition: transform 0.55s cubic-bezier(0.4, 0.2, 0.2, 1);
 
   transform-style: preserve-3d;
 }
@@ -953,8 +1170,7 @@ button:focus-visible,
 .flip-card:focus-visible .flip-card__face {
   border-color: var(--border-bright);
 
-  box-shadow:
-    0 16px 34px -22px rgba(124, 58, 237, 0.5);
+  box-shadow: 0 16px 34px -22px rgba(124, 58, 237, 0.5);
 }
 
 .flip-card__front {
@@ -1061,10 +1277,9 @@ button:focus-visible,
   margin: 0 auto 28px;
 }
 
-/*
-   Contact terminal
-   Mantiene el mismo lenguaje visual del Hero.
-*/
+/* =========================================================
+   CONTACT TERMINAL
+========================================================= */
 
 .contact-terminal {
   max-width: 640px;
@@ -1204,8 +1419,7 @@ button:focus-visible,
 
   background: #4ade80;
 
-  box-shadow:
-    0 0 0 3px rgba(74, 222, 128, 0.15);
+  box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.15);
 
   animation: pulse 1.8s ease-in-out infinite;
 }

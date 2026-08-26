@@ -1,7 +1,7 @@
-import { useLanguage } from '../context/LanguageContext.jsx'
+import { useLanguage } from "../context/LanguageContext.jsx";
 
 export default function Projects() {
-  const { data, t } = useLanguage()
+  const { data, t } = useLanguage();
 
   return (
     <section id="projects">
@@ -10,50 +10,86 @@ export default function Projects() {
         <h2>{t.projects.heading}</h2>
 
         <div className="cards">
-          {data.projects.map((p) => (
-            <article key={p.id} className={`card card--${p.accent}`}>
-              <a
-                className="card__preview"
-                href={p.url}
-                target="_blank"
-                rel="noreferrer"
-                title={t.projects.openInNewTab(p.name)}
-              >
-                <div className="card__preview-frame">
-                  <iframe
-                    src={p.url}
-                    title={t.projects.previewLabel(p.name)}
-                    loading="lazy"
-                    tabIndex={-1}
-                  />
+          {data.projects.map((p) => {
+            const hasPreview = Boolean(p.url);
+
+            return (
+              <article key={p.id} className={`card card--${p.accent}`}>
+                {hasPreview ? (
+                  <a
+                    className="card__preview"
+                    href={p.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    title={t.projects.openInNewTab(p.name)}
+                  >
+                    <div className="card__preview-frame">
+                      <iframe
+                        src={p.url}
+                        title={t.projects.previewLabel(p.name)}
+                        loading="lazy"
+                        tabIndex={-1}
+                      />
+                    </div>
+
+                    <span className="card__preview-hint">
+                      {t.projects.previewHint}
+                    </span>
+                  </a>
+                ) : (
+                  <div className="card__preview card__preview--placeholder">
+                    <div
+                      className={`card__preview-frame card__preview--${p.accent}`}
+                    >
+                      <div className="card__preview-placeholder">
+                        <span className="card__preview-placeholder-name">
+                          {p.name}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                <div className="card__top">
+                  <span className={`badge ${p.live ? "badge--live" : ""}`}>
+                    {p.live && <span className="badge__dot" />}
+                    {p.tag}
+                  </span>
+
+                  <span className="card__period">{p.period}</span>
                 </div>
-                <span className="card__preview-hint">{t.projects.previewHint}</span>
-              </a>
 
-              <div className="card__top">
-                <span className={`badge ${p.current ? 'badge--live' : ''}`}>
-                  {p.current && <span className="badge__dot" />}
-                  {p.tag}
-                </span>
-                <span className="card__period">{p.period}</span>
-              </div>
+                <h3 className="card__name">{p.name}</h3>
 
-              <h3 className="card__name">{p.name}</h3>
-              <p className="card__desc">{p.description}</p>
+                <p className="card__desc">{p.description}</p>
 
-              <div className="card__stack">
-                {p.stack.map((s) => (
-                  <span key={s} className="chip">{s}</span>
-                ))}
-              </div>
+                <div className="card__stack">
+                  {p.stack.map((s) => (
+                    <span key={s} className="chip">
+                      {s}
+                    </span>
+                  ))}
+                </div>
 
-              <a className="card__link" href={p.url} target="_blank" rel="noreferrer">
-                {t.projects.link}
-              </a>
-            </article>
-          ))}
+                {hasPreview ? (
+                  <a
+                    className="card__link"
+                    href={p.url}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {t.projects.link}
+                  </a>
+                ) : (
+                  <span className="card__link card__link--disabled">
+                    {t.projects.inProgress}
+                  </span>
+                )}
+              </article>
+            );
+          })}
         </div>
       </div>
     </section>
-  )
+  );
 }
