@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Dark Purple Background Gradient -->
+    <linearGradient id="bgGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1A0B2E"/>
+      <stop offset="50%" stop-color="#11071F"/>
+      <stop offset="100%" stop-color="#08030D"/>
+    </linearGradient>
+
+    <!-- Vibrant Violet Accent Gradient for Code Bracket Marks -->
+    <linearGradient id="violetAccent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#A855F7"/>
+      <stop offset="100%" stop-color="#7E22CE"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Base Square Container with Rounded Corners (Perfect for Favicons) -->
+  <rect width="512" height="512" rx="96" fill="url(#bgGlow)"/>
+
+  <g transform="translate(0, 0)">
+    <!-- Opening Code Bracket / Chevron (<) -->
+    <path d="M 124 180 L 48 256 L 124 332" 
+          fill="none" 
+          stroke="url(#violetAccent)" 
+          stroke-width="36" 
+          stroke-linecap="round" 
+          stroke-linejoin="round"/>
+
+    <!-- Closing Code Tag / Slash & Chevron (/>) -->
+    <path d="M 404 180 L 480 256 L 404 332" 
+          fill="none" 
+          stroke="url(#violetAccent)" 
+          stroke-width="36" 
+          stroke-linecap="round" 
+          stroke-linejoin="round"/>
+    
+    <path d="M 376 180 L 328 332" 
+          fill="none" 
+          stroke="url(#violetAccent)" 
+          stroke-width="32" 
+          stroke-linecap="round"/>
+
+    <!-- Central "RMG" Typography (Clean, Bold, High Contrast White) -->
+    <text x="236" 
+          y="282" 
+          font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" 
+          font-size="92" 
+          font-weight="900" 
+          letter-spacing="4" 
+          fill="#FFFFFF" 
+          text-anchor="middle">RMG</text>
+  </g>
+</svg>
