@@ -5,16 +5,18 @@ export default function Projects() {
 
   return (
     <section id="projects">
+      {" "}
       <div className="container">
-        <p className="eyebrow">{t.projects.eyebrow}</p>
+        {" "}
+        <p className="eyebrow">{t.projects.eyebrow}</p>{" "}
         <h2>{t.projects.heading}</h2>
-
         <div className="cards">
           {data.projects.map((p) => {
             const hasPreview = Boolean(p.url);
 
             return (
               <article key={p.id} className={`card card--${p.accent}`}>
+                {/* Preview */}
                 {hasPreview ? (
                   <a
                     className="card__preview"
@@ -50,6 +52,7 @@ export default function Projects() {
                   </div>
                 )}
 
+                {/* Header */}
                 <div className="card__top">
                   <span className={`badge ${p.live ? "badge--live" : ""}`}>
                     {p.live && <span className="badge__dot" />}
@@ -59,10 +62,13 @@ export default function Projects() {
                   <span className="card__period">{p.period}</span>
                 </div>
 
+                {/* Project name */}
                 <h3 className="card__name">{p.name}</h3>
 
+                {/* Description */}
                 <p className="card__desc">{p.description}</p>
 
+                {/* Stack */}
                 <div className="card__stack">
                   {p.stack.map((s) => (
                     <span key={s} className="chip">
@@ -71,6 +77,7 @@ export default function Projects() {
                   ))}
                 </div>
 
+                {/* Project action */}
                 {hasPreview ? (
                   <a
                     className="card__link"
@@ -81,8 +88,16 @@ export default function Projects() {
                     {t.projects.link}
                   </a>
                 ) : (
-                  <span className="card__link card__link--disabled">
-                    {t.projects.inProgress}
+                  <span
+                    className={`card__link ${
+                      p.status === "completed"
+                        ? "card__link--completed"
+                        : "card__link--disabled"
+                    }`}
+                  >
+                    {p.status === "completed"
+                      ? t.projects.completed
+                      : t.projects.inProgress}
                   </span>
                 )}
               </article>

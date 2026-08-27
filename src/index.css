@@ -655,6 +655,24 @@ button:focus-visible,
   overflow: hidden;
 }
 
+/* =========================================================
+   DOCENTES / SKY PREVIEW
+========================================================= */
+
+.card__preview--sky {
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(37, 165, 220, 0.498),
+      transparent 45%
+    ),
+    linear-gradient(135deg, #07222c, #0b2f3d 55%, #0f3648);
+}
+
+.card__preview--sky .card__preview-placeholder-name {
+  color: #7dd3fc;
+}
+
 /* ---------------------------------------------------------
    Mantiene exactamente la misma proporción para todos
 --------------------------------------------------------- */
@@ -665,8 +683,6 @@ button:focus-visible,
   aspect-ratio: 16 / 10;
 
   overflow: hidden;
-
-  background: var(--bg-elevated);
 
   position: relative;
 }
